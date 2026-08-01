@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NoPanicZone - Success Stories</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #003366;
+      margin: 0;
+      padding-top: 110px;
+      padding-bottom: 40px;
+    }
+
+    .datetime {
+      position: fixed;
+      top: 56px;
+      width: 100%;
+      background: #005f99;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      z-index: 1031;
+      user-select: none;
+    }
+
+    main.container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 95, 153, 0.1);
+    }
+
+    h1 {
+      font-weight: 700;
+      color: #004a80;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .story-item {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .story-item h3 {
+      color: #005f99;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #005f99;
+      color: white;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">NoPanicZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" 
+        aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" target="_blank">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html" target="_blank">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="MentalHealthResources.html" target="_blank">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="SelfHelp.html" target="_blank">Self Help</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactUs.html" target="_blank">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="SuccessStories.html" target="_blank">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="counseling.html" target="_blank">Counseling</a></li>
+          <li class="nav-item"><a class="nav-link" href="form.html" target="_blank">Quick Mental Check</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="datetime" id="dateTimeDisplay" aria-live="polite" aria-atomic="true" role="region" aria-label="Current date and time">
+    Loading date and time...
+  </div>
+
+  <main class="container" tabindex="-1" role="main">
+    <h1>Success Stories</h1>
+
+    <p>"You're not alone. Many people faced the same fears before interviews and they made it through. Read their stories and get inspired to create your own story."</p>
+
+    <div class="stories-grid">
+      <div class="story-item" tabindex="0">
+        <h3>Ahmad, 24 – Fresh Graduate</h3>
+        <p>I used to feel intense anxiety before interviews. This site helped me learn how to stay calm and prepare effectively.</p>
+        <p>"Thanks to the breathing exercises and practice tips, I finally got my first job!"</p>
+      </div>
+      <div class="story-item" tabindex="0">
+        <h3>Leen, 27 – Career Switcher</h3>
+        <p>I was terrified of switching careers. I practiced with the mock questions and used self-care tips to reduce my stress.</p>
+        <p>"I walked into the interview feeling strong and confident."</p>
+      </div>
+      <div class="story-item" tabindex="0">
+        <h3>Omar, 22 – Student</h3>
+        <p>Interviews always made me nervous. I didn't know how to answer questions properly. The tools here gave me clarity and confidence.</p>
+        <p>"Now I can speak about myself with ease and pride."</p>
+      </div>
+      <div class="story-item" tabindex="0">
+        <h3>Want to Share Your Story?</h3>
+        <p>Have you faced interview anxiety and made it through? We’d love to hear how you did it! Send us your story here: <a href="contactUs.html" target="_blank">Contact Us</a>. Your experience might inspire someone who needs it.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 All Rights Reserved
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Update date and time every minute
+    function updateDateTime() {
+      const el = document.getElementById('dateTimeDisplay');
+      const now = new Date();
+      const dateStr = now.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      const timeStr = now.toLocaleTimeString(undefined, {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      el.textContent = `Date: ${dateStr} — Time: ${timeStr}`;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+  </script>
+</body>
+
+</html>

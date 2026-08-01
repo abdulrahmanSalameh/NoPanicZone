@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - NoPanicZone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #003366;
+      margin: 0;
+      padding-top: 110px;
+      padding-bottom: 40px;
+    }
+    .datetime {
+      position: fixed;
+      top: 56px;
+      width: 100%;
+      background: #005f99;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      z-index: 1031;
+      user-select: none;
+    }
+    main.container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    p {
+      text-align: center;
+      margin: 15px;
+    }
+    table {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 600px;
+    }
+    table, th, td {
+      border: 5px solid #aaa;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #005f99;
+      color: white;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">NoPanicZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" 
+        aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item"><a class="nav-link" href="index.html" target="_blank">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="aboutus.html" target="_blank">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="MentalHealthResources.html" target="_blank">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="SelfHelp.html" target="_blank">Self Help</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="contactUs.html" target="_blank">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="SuccessStories.html" target="_blank">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="counseling.html" target="_blank">Counseling</a></li>
+          <li class="nav-item"><a class="nav-link" href="form.html" target="_blank">Quick Mental Check</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="datetime" id="dateTimeDisplay" aria-live="polite" aria-atomic="true" role="region" aria-label="Current date and time">
+    Loading date and time...
+  </div>
+
+  <main class="container" tabindex="-1" role="main">
+    <h2>Contact Us</h2>
+    <p>You can contact us directly via email:</p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Gmail</th>
+        <th>Hotline Numbers</th>
+      </tr>
+      <tr>
+        <td>Abdullrahman</td>
+        <td><a href="mailto:salamaabood1010@gmail.com" target="_blank">salamaabood1010@gmail.com</a></td>
+        <td>00962797869586</td>
+      </tr>
+      <tr>
+        <td>Shafik</td>
+        <td><a href="mailto:shafikashkar2005@gmail.com" target="_blank">shafikashkar2005@gmail.com</a></td>
+        <td>00962792070583</td>
+      </tr>
+      <tr>
+        <td>Amro</td>
+        <td><a href="mailto:amer908xc908@gmail.com" target="_blank">amer908xc908@gmail.com</a></td>
+        <td>00962797559788</td>
+      </tr>
+    </table>
+    <p>Just click on any of the emails above, and your email app will open with the address already filled in.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 All Rights Reserved
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    function updateDateTime() {
+      const el = document.getElementById('dateTimeDisplay');
+      const now = new Date();
+      const dateStr = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+      const timeStr = now.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+      el.textContent = `Date: ${dateStr} — Time: ${timeStr}`;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 60000);
+  </script>
+</body>
+</html>
